@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const Datastore = require("nedb")
 const { response } = require("express");
 const express = require("express");
-const { data } = require("cheerio/lib/api/attributes");
+const { data } = require("./node_modules/cheerio/lib/api/attributes");
 const app = express();
 const port = process.env.PORT || 3000;
 require('dotenv').config()
