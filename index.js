@@ -115,6 +115,25 @@ app.post("/Login", (request, response) => {
   console.log(data.UserName, data.PassWord)
   con.query("SELECT * FROM Users", function (err, result, fields) {
     for (let i = 0; i < result.length; i++) {
+      if (data.UserName == result[i].UserName && data.PassWord == result[i].PassWord) {
+        console.log("Access granted!")
+
+      }
+      else { console.log("Access denied!"), console.log("No such user") }
+    }
+  })
+
+})
+
+app.post("/MemberSite", (request, response) => {
+  const data = request.body;
+  const timestamp = Date.now();
+  data.timestamp = timestamp;
+  database.insert(data);
+  response.json(data);
+  console.log(data.UserName, data.PassWord)
+  con.query("SELECT * FROM Users", function (err, result, fields) {
+    for (let i = 0; i < result.length; i++) {
       console.log(result[i])
       if (data.UserName == result[i].UserName && data.PassWord == result[i].PassWord) {
         console.log("Access granted!")

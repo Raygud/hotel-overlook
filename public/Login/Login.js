@@ -12,6 +12,8 @@ function setup() {
         video.loadPixels();
         const image64 = video.canvas.toDataURL();
         const data = { UserName, PassWord };
+        sessionStorage.setItem("UserName", UserName);
+        sessionStorage.setItem("PassWord", PassWord);
         const options = {
             method: 'POST',
             headers: {
@@ -22,6 +24,8 @@ function setup() {
         const response = await fetch('/Login', options);
         const json = await response.json();
         console.log(json);
+        console.log(sessionStorage.getItem("UserName"))
+        console.log(sessionStorage.getItem("PassWord"))
     });
 
 };

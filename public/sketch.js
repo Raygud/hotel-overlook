@@ -1,6 +1,8 @@
 
+console.log(sessionStorage.getItem("UserId"))
         function setup(){
           
+
             noCanvas();
             const video = createCapture(VIDEO);
             video.size(320,240);
@@ -8,6 +10,7 @@
       let lat, lon;
       const button = document.getElementById('submit');
       button.addEventListener('click', async event => {
+        
         const mood = document.getElementById('mood').value;
         video.loadPixels();
         const image64 = video.canvas.toDataURL();
@@ -35,5 +38,13 @@
       } else {
         console.log('geolocation not available');
       }
+      
         };
+
+        function session(){
+          sessionStorage.setItem("UserId", "Runi123");
+          console.log(sessionStorage.getItem("UserId"))
+          
+        }
+        
         
