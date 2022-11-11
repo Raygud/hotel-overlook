@@ -1,5 +1,5 @@
 .BookingContainer {
-    width: 82vw;
+    width: 78vw;
     height: 8vw;
     background-color: rgb(255, 255, 255);
     position: absolute;
@@ -11,11 +11,15 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    padding: 0vw 2vw 0vw 2vw;
     overflow: hidden;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
+    div:nth-child(6){
+        width: 60%;
+    }
     div {
         width: 100%;
         text-align: left;
@@ -28,12 +32,22 @@
         }
 
         select,
-        input {
+        input,button {
             font-size: 1.2vw;
             width: 100%;
             padding: 0.5vw;
             border-radius: 5px;
         }
+        button {
+            font-size: 1.2vw;
+            width: 100%;
+            padding: 0.5vw;
+            border-radius: 5px;
+            background-color: red;
+            border-color: red;
+            color: white;
+        }
+        
     }
 }
 
